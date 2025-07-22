@@ -297,6 +297,83 @@
  
   ---------------
   ### 0721 퀘스트 수행
+  - S026_이성국:
+    <details>
+      <summary>AI 학습리마인드</summary>
+
+        ✅ 전체 구조 설계 관점에서의 학습 요약
+        
+        🎯 핵심 목표
+        
+        “프로그램을 입력 → 검증 → 처리/계산 → 형식화 → 출력 단계로 구분하고,
+        각 단계를 책임지는 객체/모듈로 나눠 구조화된 프로그램을 설계한다.”
+        
+        
+        🧱 1. 객체지향 원칙을 반영한 구조 설계
+        
+        원칙	적용 사례
+        단일 책임 원칙 (SRP)	InputManager, ActionProcessor, BoardRenderer 각각 하나의 역할만 수행
+        은닉과 캡슐화	Board 내부의 grid는 private, 외부는 place(), move() 등 메서드 통해 조작
+        추상화	GameCharacter는 공통 인터페이스 제공, 하위 클래스 (Thanos, BlackWidow 등)는 고유 동작 구현
+        다형성	attack(), move() 등 공통 메서드를 각 캐릭터가 다르게 구현 가능
+        의존성 역전	GameManager는 ActionProcessor와 InputManager 등에 위임함으로써 결합도를 낮춤
+        
+        
+        🧩 2. 모듈 분리 기반의 아키텍처
+        
+        🧭 아키텍처 흐름
+        
+        사용자 입력
+          ↓
+        InputManager.getCommand()
+          ↓
+        InputManager.parse()
+          ↓
+        ActionProcessor.performAction()
+          ↓
+        (보드 상태 변경)
+          ↓
+        BoardRenderer.showMyBoards()
+        
+        📦 주요 모듈별 역할
+        
+        모듈	역할
+        GameManager	게임 전체 흐름 관리, 보드/캐릭터 소유, 턴 관리
+        InputManager	사용자 입력을 받고 파싱하여 의미 있는 위치 정보로 변환
+        ActionProcessor	이동/공격 등 실질적인 게임 액션 수행, 규칙 판단 포함
+        Board	캐릭터 배치/조회/이동/공격을 책임지는 핵심 데이터 구조
+        BoardRenderer	보드 상태를 사람이 이해할 수 있도록 출력
+        GameCharacter + subclasses	각 캐릭터의 공통 속성과 개별 능력 정의
+        StoneBox, HasStone	스톤의 수집과 이관을 관리하는 보조 시스템
+        
+        
+        ⚙️ 3. 유연한 입력과 의미 기반 처리
+        	•	입력값 "THANOS->C3" → InputManager.parse() 단계에서 THANOS를 의미 있는 명령어로 해석
+        	•	내부적으로 .placeholderForThanos 를 통해 구체적 Position으로 변환
+        	•	추상화된 명령어를 실제 좌표로 바꾸는 컨텍스트 기반 처리 로직 경험
+        
+        📐 4. 데이터 상태 기반 게임 로직 분기
+        	•	캐릭터 HP가 0일 경우 제거
+        	•	HP가 절반 이하일 경우 스톤 이관 + 힐 처리
+        	•	Thanos 공격 시 오른쪽 위치 자동 동시 공격 처리
+        	•	게임 종료 조건 도입 (예: 캐릭터 전체 제거, HP 총합 0)
+        
+        🔍 5. 학습된 구조화 역량
+        
+        학습 포인트	설명
+        책임 분리	역할별 클래스로 나눠 책임 명확화
+        유지보수 용이성	모듈화로 코드가 명확하고 변경 영향 범위가 작음
+        유연한 확장성	새로운 캐릭터/명령어 추가가 용이
+        입력과 논리 분리	사용자 입력과 내부 게임 로직을 명확히 분리
+        객체 간 협력 설계	Thanos-Board-StoneBox 간 협력 구조 경험
+        
+        
+        📌 앞으로 할 수 있는 확장
+        	•	게임 종료 조건 명확히 정의 및 알림
+        	•	Computer AI의 자동 턴 구현 (랜덤 or 전략적 선택)
+        	•	게임 리플레이 로그 저장 기능 (입력/결과 저장)
+        	•	SwiftUI나 콘솔 애니메이션으로 UI 개선
+    </details>
   - J232_임장혁:
 
 <img width="1192" height="354" alt="image" src="https://github.com/user-attachments/assets/1fca119f-b46d-47bd-8bc4-ef0542198ea8" />
