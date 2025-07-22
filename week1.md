@@ -294,3 +294,12 @@
 - S026_이성국:
   - 수행 퀘스트: 학습 리마인드
   - output: AI에게 어제 나눈 대용 리마인드 받기
+ 
+  ---------------
+  ### 0721 퀘스트 수행
+  - J232_임장혁:
+
+<img width="1192" height="354" alt="image" src="https://github.com/user-attachments/assets/1fca119f-b46d-47bd-8bc4-ef0542198ea8" />
+
+  
+
