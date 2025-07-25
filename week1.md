@@ -378,11 +378,11 @@
     </details>
   - J232_임장혁:
     <details>
-<img width="1192" height="354" alt="image" src="https://github.com/user-attachments/assets/1fca119f-b46d-47bd-8bc4-ef0542198ea8" />
-  <img width="1162" height="204" alt="image" src="https://github.com/user-attachments/assets/b4a8394c-96fb-4bdf-9191-9477e279c2e2" />
-<img width="1327" height="176" alt="image" src="https://github.com/user-attachments/assets/5d1dc2f0-9139-4875-81b7-6d4fc9c2e34d" />
-
-소감 및 결과: 자존감이 떨어진 거 같을 때 했는데, 확실하게 오글거리지만 한 마디, 한 마디 기분은 좋아지는 것 같다.
+    <img width="1192" height="354" alt="image" src="https://github.com/user-attachments/assets/1fca119f-b46d-47bd-8bc4-ef0542198ea8" />
+      <img width="1162" height="204" alt="image" src="https://github.com/user-attachments/assets/b4a8394c-96fb-4bdf-9191-9477e279c2e2" />
+    <img width="1327" height="176" alt="image" src="https://github.com/user-attachments/assets/5d1dc2f0-9139-4875-81b7-6d4fc9c2e34d" />
+    
+    소감 및 결과: 자존감이 떨어진 거 같을 때 했는데, 확실하게 오글거리지만 한 마디, 한 마디 기분은 좋아지는 것 같다.
 
     </details>
     
