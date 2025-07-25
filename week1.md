@@ -294,9 +294,11 @@
 - S026_이성국:
   - 수행 퀘스트: 학습 리마인드
   - output: AI에게 어제 나눈 대용 리마인드 받기
- 
+
   ---------------
+
   ### 0721 퀘스트 수행
+
   - S026_이성국:
     <details>
       <summary>AI 학습리마인드</summary>
@@ -311,12 +313,12 @@
         
         🧱 1. 객체지향 원칙을 반영한 구조 설계
         
-        원칙	적용 사례
-        단일 책임 원칙 (SRP)	InputManager, ActionProcessor, BoardRenderer 각각 하나의 역할만 수행
-        은닉과 캡슐화	Board 내부의 grid는 private, 외부는 place(), move() 등 메서드 통해 조작
-        추상화	GameCharacter는 공통 인터페이스 제공, 하위 클래스 (Thanos, BlackWidow 등)는 고유 동작 구현
-        다형성	attack(), move() 등 공통 메서드를 각 캐릭터가 다르게 구현 가능
-        의존성 역전	GameManager는 ActionProcessor와 InputManager 등에 위임함으로써 결합도를 낮춤
+        원칙 적용 사례
+        단일 책임 원칙 (SRP) InputManager, ActionProcessor, BoardRenderer 각각 하나의 역할만 수행
+        은닉과 캡슐화 Board 내부의 grid는 private, 외부는 place(), move() 등 메서드 통해 조작
+        추상화 GameCharacter는 공통 인터페이스 제공, 하위 클래스 (Thanos, BlackWidow 등)는 고유 동작 구현
+        다형성 attack(), move() 등 공통 메서드를 각 캐릭터가 다르게 구현 가능
+        의존성 역전 GameManager는 ActionProcessor와 InputManager 등에 위임함으로써 결합도를 낮춤
         
         
         🧩 2. 모듈 분리 기반의 아키텍처
@@ -337,50 +339,53 @@
         
         📦 주요 모듈별 역할
         
-        모듈	역할
-        GameManager	게임 전체 흐름 관리, 보드/캐릭터 소유, 턴 관리
-        InputManager	사용자 입력을 받고 파싱하여 의미 있는 위치 정보로 변환
-        ActionProcessor	이동/공격 등 실질적인 게임 액션 수행, 규칙 판단 포함
-        Board	캐릭터 배치/조회/이동/공격을 책임지는 핵심 데이터 구조
-        BoardRenderer	보드 상태를 사람이 이해할 수 있도록 출력
-        GameCharacter + subclasses	각 캐릭터의 공통 속성과 개별 능력 정의
-        StoneBox, HasStone	스톤의 수집과 이관을 관리하는 보조 시스템
+        모듈 역할
+        GameManager 게임 전체 흐름 관리, 보드/캐릭터 소유, 턴 관리
+        InputManager 사용자 입력을 받고 파싱하여 의미 있는 위치 정보로 변환
+        ActionProcessor 이동/공격 등 실질적인 게임 액션 수행, 규칙 판단 포함
+        Board 캐릭터 배치/조회/이동/공격을 책임지는 핵심 데이터 구조
+        BoardRenderer 보드 상태를 사람이 이해할 수 있도록 출력
+        GameCharacter + subclasses 각 캐릭터의 공통 속성과 개별 능력 정의
+        StoneBox, HasStone 스톤의 수집과 이관을 관리하는 보조 시스템
         
         
         ⚙️ 3. 유연한 입력과 의미 기반 처리
-        	•	입력값 "THANOS->C3" → InputManager.parse() 단계에서 THANOS를 의미 있는 명령어로 해석
-        	•	내부적으로 .placeholderForThanos 를 통해 구체적 Position으로 변환
-        	•	추상화된 명령어를 실제 좌표로 바꾸는 컨텍스트 기반 처리 로직 경험
+         • 입력값 "THANOS->C3" → InputManager.parse() 단계에서 THANOS를 의미 있는 명령어로 해석
+         • 내부적으로 .placeholderForThanos 를 통해 구체적 Position으로 변환
+         • 추상화된 명령어를 실제 좌표로 바꾸는 컨텍스트 기반 처리 로직 경험
         
         📐 4. 데이터 상태 기반 게임 로직 분기
-        	•	캐릭터 HP가 0일 경우 제거
-        	•	HP가 절반 이하일 경우 스톤 이관 + 힐 처리
-        	•	Thanos 공격 시 오른쪽 위치 자동 동시 공격 처리
-        	•	게임 종료 조건 도입 (예: 캐릭터 전체 제거, HP 총합 0)
+         • 캐릭터 HP가 0일 경우 제거
+         • HP가 절반 이하일 경우 스톤 이관 + 힐 처리
+         • Thanos 공격 시 오른쪽 위치 자동 동시 공격 처리
+         • 게임 종료 조건 도입 (예: 캐릭터 전체 제거, HP 총합 0)
         
         🔍 5. 학습된 구조화 역량
         
-        학습 포인트	설명
-        책임 분리	역할별 클래스로 나눠 책임 명확화
-        유지보수 용이성	모듈화로 코드가 명확하고 변경 영향 범위가 작음
-        유연한 확장성	새로운 캐릭터/명령어 추가가 용이
-        입력과 논리 분리	사용자 입력과 내부 게임 로직을 명확히 분리
-        객체 간 협력 설계	Thanos-Board-StoneBox 간 협력 구조 경험
+        학습 포인트 설명
+        책임 분리 역할별 클래스로 나눠 책임 명확화
+        유지보수 용이성 모듈화로 코드가 명확하고 변경 영향 범위가 작음
+        유연한 확장성 새로운 캐릭터/명령어 추가가 용이
+        입력과 논리 분리 사용자 입력과 내부 게임 로직을 명확히 분리
+        객체 간 협력 설계 Thanos-Board-StoneBox 간 협력 구조 경험
         
         
         📌 앞으로 할 수 있는 확장
-        	•	게임 종료 조건 명확히 정의 및 알림
-        	•	Computer AI의 자동 턴 구현 (랜덤 or 전략적 선택)
-        	•	게임 리플레이 로그 저장 기능 (입력/결과 저장)
-        	•	SwiftUI나 콘솔 애니메이션으로 UI 개선
+         • 게임 종료 조건 명확히 정의 및 알림
+         • Computer AI의 자동 턴 구현 (랜덤 or 전략적 선택)
+         • 게임 리플레이 로그 저장 기능 (입력/결과 저장)
+         • SwiftUI나 콘솔 애니메이션으로 UI 개선
     </details>
   - J232_임장혁:
 
 <img width="1192" height="354" alt="image" src="https://github.com/user-attachments/assets/1fca119f-b46d-47bd-8bc4-ef0542198ea8" />
- 
+
   ---------------
-  ### 0725 퀘스트 수행
-  - S026_이성국:
+
+### 0725 퀘스트 수행
+
+- S026_이성국:
+
 <details>
 <summary>AI 학습리마인드</summary>
 좋아, 어제 학습한 내용을 리마인드할게:
@@ -388,15 +393,15 @@
 ⸻
 
 📌 7월 24일 학습 요약
-	•	멀티 스레드 환경 실습
+ • 멀티 스레드 환경 실습
 레이스 컨디션을 직접 재현하고, NSLock, DispatchSemaphore, NSCondition을 활용해 동기화 기법을 실습했어.
-	•	Thread 객체 실습
+ • Thread 객체 실습
 스레드 생성, 종료 대기(join), 데이터 전달 방식을 구현하며 스레드 간 데이터 흐름을 조절하는 방법을 익혔어.
-	•	Publisher-Subscriber 패턴 구현
+ • Publisher-Subscriber 패턴 구현
 OperationQueue를 기반으로 한 비동기 EventManager를 직접 구현했고, 동기/비동기/지연 큐 방식의 이벤트 전송을 테스트했어.
-	•	NotificationCenter와의 차이점 학습
+ • NotificationCenter와의 차이점 학습
 파운데이션 NotificationCenter와의 구현 차이를 비교하고, GCD/OperationQueue 기반 방식과의 차이를 정리했어.
-	•	Observer 패턴 vs Publisher-Subscriber 패턴
+ • Observer 패턴 vs Publisher-Subscriber 패턴
 두 패턴의 개념적 차이점과 유사점에 대해 비교하고 토론했어.
 
 ⸻
@@ -405,6 +410,23 @@ OperationQueue를 기반으로 한 비동기 EventManager를 직접 구현했고
 필요하면 오늘 우선순위 3가지도 같이 정해줄게.
 
 </details>
-      
-  
 
+# 박재성 퀘스트 수행
+
+    바쁜 일상 중에 짬짬이 할 수 있는 틈새 운동들을 추천해드릴게요!
+    책상에서 할 수 있는 운동:
+    목과 어깨 돌리기, 손목 스트레칭, 의자에 앉아서 다리 들어올리기, 발목 돌리기 등이 좋아요. 앉아 있는 시간이 길 때 혈액순환에도 도움이 되고요.
+    계단이나 복도에서:
+    계단 오르내리기는 정말 효과적인 유산소 운동이에요. 엘리베이터 대신 계단을 이용하거나, 복도에서 제자리 걷기나 가벼운 스쿼트도 좋습니다.
+    집에서 짧은 시간에:
+    플랭크 30초, 스쿼트 10-15회, 벽 팔굽혀펴기, 런지 같은 건 5분 안에 끝낼 수 있어요. TV 광고 시간이나 요리하면서 기다릴 때 하기 딱 좋죠.
+    이동 중에:
+    지하철이나 버스에서 발뒤꿈치 들기, 배에 힘주고 서있기, 한 정거장 일찍 내려서 걷기 같은 것들도 운동이 돼요.
+    어떤 상황에서 주로 시간을 내기 어려우신가요? 더 구체적인 추천을 해드릴 수 있을 것 같아요.
+
+1. 7월 21일은 목과 어깨 돌리기를 했음.
+    1. 목이 안 좋은 편이라 굉장히 시원했음.
+2. 7월 22일은 손목 스트레칭을 했음.
+3. 7월 23일은 발목 돌리기를 했음.
+4. 7월 24일은 계단 오르내리기를 했음.
+5. 결과 : 스트레칭 기분이 좋았음.
