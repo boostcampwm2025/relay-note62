@@ -377,21 +377,34 @@
   - J232_임장혁:
 
 <img width="1192" height="354" alt="image" src="https://github.com/user-attachments/assets/1fca119f-b46d-47bd-8bc4-ef0542198ea8" />
-### 0725 퀘스트 수행
+ 
+  ---------------
+  ### 0725 퀘스트 수행
   - S026_이성국:
-    <details>
-      <summary>AI 학습리마인드</summary>
-      📌 7월 24일 학습 요약
-	    •	멀티 스레드 환경 실습
-        레이스 컨디션을 직접 재현하고, NSLock, DispatchSemaphore, NSCondition을 활용해 동기화 기법을 실습했어.
-	    •	Thread 객체 실습
-        스레드 생성, 종료 대기(join), 데이터 전달 방식을 구현하며 스레드 간 데이터 흐름을 조절하는 방법을 익혔어.
-	    •	Publisher-Subscriber 패턴 구현
-        OperationQueue를 기반으로 한 비동기 EventManager를 직접 구현했고, 동기/비동기/지연 큐 방식의 이벤트 전송을 테스트했어.
-	    •	NotificationCenter와의 차이점 학습
-        파운데이션 NotificationCenter와의 구현 차이를 비교하고, GCD/OperationQueue 기반 방식과의 차이를 정리했어.
-	    •	Observer 패턴 vs Publisher-Subscriber 패턴
-        두 패턴의 개념적 차이점과 유사점에 대해 비교하고 토론했어.
-    </details>
+<details>
+<summary>AI 학습리마인드</summary>
+좋아, 어제 학습한 내용을 리마인드할게:
+
+⸻
+
+📌 7월 24일 학습 요약
+	•	멀티 스레드 환경 실습
+레이스 컨디션을 직접 재현하고, NSLock, DispatchSemaphore, NSCondition을 활용해 동기화 기법을 실습했어.
+	•	Thread 객체 실습
+스레드 생성, 종료 대기(join), 데이터 전달 방식을 구현하며 스레드 간 데이터 흐름을 조절하는 방법을 익혔어.
+	•	Publisher-Subscriber 패턴 구현
+OperationQueue를 기반으로 한 비동기 EventManager를 직접 구현했고, 동기/비동기/지연 큐 방식의 이벤트 전송을 테스트했어.
+	•	NotificationCenter와의 차이점 학습
+파운데이션 NotificationCenter와의 구현 차이를 비교하고, GCD/OperationQueue 기반 방식과의 차이를 정리했어.
+	•	Observer 패턴 vs Publisher-Subscriber 패턴
+두 패턴의 개념적 차이점과 유사점에 대해 비교하고 토론했어.
+
+⸻
+
+오늘 아침 루틴으로 이 내용 확인하고, 에너지 체크도 잊지 말고 해줘! 😊
+필요하면 오늘 우선순위 3가지도 같이 정해줄게.
+
+</details>
+      
   
 
