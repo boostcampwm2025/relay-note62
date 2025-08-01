@@ -121,6 +121,7 @@
 - 스트레칭
 </details>
 
+<details>
 <summary>7월 30일 수요일</summary>
 
 # AI 제안
